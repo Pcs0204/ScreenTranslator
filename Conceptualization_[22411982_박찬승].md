@@ -152,4 +152,4 @@ graph LR
 
 ## 7. References
 
-- :[pytesseract GitHub Repository](https://github.com/madmaze/pytesseract)[oaicite:0]{index=0}
+- :[pytesseract GitHub Repository](https://github.com/madmaze/pytesseract)
