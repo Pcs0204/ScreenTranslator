@@ -7,7 +7,7 @@ Real-time Screen Translator
 - Student No: [22411982]
 - Name: [박찬승]
 - E-mail: [seung050204@gmail.com]
-- GitHub: [(https://github.com/Pcs0204/ScreenTranslator)]
+- GitHub: [https://github.com/Pcs0204/ScreenTranslator]
 
 ---
 
@@ -51,11 +51,15 @@ Real-time Screen Translator
 
 ## 2. System Context Diagram
 
-### 구성 요소
-- User (사용자)
-- Game Screen (게임 화면)
-- Translator System (본 시스템)
-- Translation API (외부 번역 서비스)
+```mermaid
+graph LR
+    User -->|영역 지정 / 번역 요청| System
+    System -->|캡처| Screen
+    System -->|OCR 처리| OCR
+    OCR --> System
+    System -->|번역 요청| API
+    API --> System
+    System -->|오버레이 출력| User
 
 ### 관계 설명
 - 사용자는 단축키를 통해 시스템을 제어한다.
@@ -144,3 +148,7 @@ Real-time Screen Translator
 | Capture | 화면의 특정 영역을 이미지로 저장하는 과정 |
 
 ---
+
+## 7. References
+
+- :[pytesseract GitHub Repository](https://github.com/madmaze/pytesseract)[oaicite:0]{index=0}
