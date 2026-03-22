@@ -60,8 +60,8 @@ graph LR
     System -->|번역 요청| API
     API --> System
     System -->|오버레이 출력| User
+```
 
-```markdown
 ### 관계 설명
 - 사용자는 단축키를 통해 시스템을 제어한다.
 - 시스템은 게임 화면의 특정 영역을 캡처한다.
