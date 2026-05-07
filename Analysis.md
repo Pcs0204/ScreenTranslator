@@ -63,6 +63,7 @@ graph LR
 ### Use Case Description
 
 1) Select Region
+
 | 항목 | 내용 |
 |-----|-----|
 | Actor | User |
@@ -70,7 +71,8 @@ graph LR
 | Pre-condition| 프로그램 실행 상태 |
 | Post-condition| 선택된 영역 저장 |
 
-3) Trigger Translation
+2) Trigger Translation
+
 | 항목 | 내용 |
 |-----|-----|
 | Actor	| User |
@@ -78,7 +80,8 @@ graph LR
 | Pre-condition	| 영역이 지정되어 있어야 함 |
 | Post-condition	| 번역 프로세스 시작 |
 
-5) Display Result
+3) Display Result
+
 | 항목	| 내용 |
 |-----|-----|
 | Actor	| System |
