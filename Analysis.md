@@ -49,12 +49,15 @@ Screen Translator
 ### Use Case Diagram
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    actor A as user
-    participant B as 1
-    participant C as 2
-
+graph LR
+    User -->|Select Region| System
+    User -->|Trigger Translation| System
+    System -->|Capture Screen| Screen
+    System -->|OCR Process| OCR
+    OCR --> System
+    System -->|Request Translation| API
+    API --> System
+    System -->|Display Result| User
 ```
 
 ### Use Case Description
