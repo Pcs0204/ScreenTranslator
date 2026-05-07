@@ -123,40 +123,31 @@ HotkeyManager는 사용자 입력을 감지한다
 ```mermaid
 flowchart TB
 
-    subgraph MainWindow["Game Text Translator"]
+    subgraph GameScreen["Game Screen"]
     
-        subgraph LeftPanel["Settings Panel"]
-            A1[Source Language]
-            A2[Target Language]
-            A3[Hotkey Settings]
-            A4[Overlay Options]
+        subgraph StoryArea["1. Text Translation Area (Bottom Text Box)"]
+            T1["Original Text<br/>This is example text"]
         end
 
-        subgraph RightPanel["Preview Area"]
-            B1[Selected Screen Region]
-            B2[Detected Text]
-            B3[Translated Result]
-        end
-
-        subgraph Bottom["Status"]
-            C1[Ready]
+        subgraph OverlayArea["2. Translation Result Window (Right Overlay)"]
+            O1["Translated Text<br/>예시 텍스트입니다."]
         end
 
     end
 ```
 
-1. 영역 선택 모드
-단축키 입력 시 화면이 반투명하게 변함
+-영역 선택 모드
+단축키 입력 시 영역 지정 상태 활성화
 마우스 드래그로 영역 지정
 
-2. 번역 실행
+-번역 실행
 단축키 입력 시 번역 수행
 
-3.결과 출력
+-결과 출력
 번역 결과를 화면 위에 오버레이로 표시
 기존 화면을 가리지 않도록 반투명 처리
 
-사용자 흐름
+-사용자 흐름
 프로그램 실행
 단축키로 영역 지정
 번역 단축키 입력
