@@ -123,25 +123,20 @@ HotkeyManager는 사용자 입력을 감지한다
 ```mermaid
 flowchart TB
 
-    subgraph Window["Screen Translator"]
+    subgraph Window["전체 화면"]
 
-        subgraph MainArea["전체 화면"]
-
-            direction LR
-
-            subgraph Game["메인 화면"]
-                G1["Game Play Area"]
-            end
-
-            subgraph Overlay["번역 오버레이"]
-                O1["Translated Text"]
-                O2["Overlay Window"]
-            end
-
+        subgraph Game["메인 화면"]
+            G1["Game Play Area"]
         end
+
+        direction LR
 
         subgraph BottomText["대상 텍스트 영역"]
             T1["Original Game Text"]
+        end
+
+        subgraph Overlay["번역 오버레이"]
+            O1["Translated Text"]
         end
 
     end
