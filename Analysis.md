@@ -49,15 +49,12 @@ Screen Translator
 ### Use Case Diagram
 
 ```mermaid
-graph LR
-    User -->|Select Region| System
-    User -->|Trigger Translation| System
-    System -->|Capture Screen| Screen
-    System -->|OCR Process| OCR
-    OCR --> System
-    System -->|Request Translation| API
-    API --> System
-    System -->|Display Result| User
+sequenceDiagram
+    autonumber
+    actor A as user
+    participant B as 1
+    participant C as 2
+
 ```
 
 ### Use Case Description
@@ -129,14 +126,17 @@ flowchart TB
             G1["Game Play Area"]
         end
 
-        direction LR
+        subgraph Translator["번역 영역"]
 
-        subgraph BottomText["대상 텍스트 영역"]
-            T1["Original Game Text"]
-        end
+            subgraph BottomText["대상 텍스트 영역"]
+                T1["Original Game Text"]
+            end
 
-        subgraph Overlay["번역 오버레이"]
-            O1["Translated Text"]
+            subgraph Overlay["번역 오버레이"]
+                O1["Translated Text"]
+            end
+
+            direction LR
         end
 
     end
