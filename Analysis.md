@@ -64,20 +64,23 @@ graph LR
 
 1) Select Region
 | 항목 | 내용 |
-| Actor |	User |
-| Description| 	사용자가 번역할 화면 영역을 선택한다 |
-| Pre-condition| 	프로그램 실행 상태 |
-| Post-condition| 	선택된 영역 저장 |
+|-----|-----|
+| Actor | User |
+| Description| 사용자가 번역할 화면 영역을 선택한다 |
+| Pre-condition| 프로그램 실행 상태 |
+| Post-condition| 선택된 영역 저장 |
 
-2) Trigger Translation
+3) Trigger Translation
 | 항목 | 내용 |
+|-----|-----|
 | Actor	| User |
 | Description	| 단축키를 통해 번역을 실행한다 |
 | Pre-condition	| 영역이 지정되어 있어야 함 |
 | Post-condition	| 번역 프로세스 시작 |
 
-3) Display Result
+5) Display Result
 | 항목	| 내용 |
+|-----|-----|
 | Actor	| System |
 | Description	| 번역 결과를 화면에 오버레이로 출력 |
 | Pre-condition	| 번역 완료 |
