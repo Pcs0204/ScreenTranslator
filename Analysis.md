@@ -67,27 +67,29 @@ graph LR
 | 항목 | 내용 |
 |-----|-----|
 | Actor | User |
-| Description| 사용자가 번역할 화면 영역을 선택한다 |
-| Pre-condition| 프로그램 실행 상태 |
-| Post-condition| 선택된 영역 저장 |
+| Description | 사용자가 번역할 화면 영역을 선택한다 |
+| Pre-condition | 프로그램 실행 상태 |
+| Post-condition | 선택된 영역 저장 |
+
 
 2) Trigger Translation
 
 | 항목 | 내용 |
 |-----|-----|
 | Actor	| User |
-| Description	| 단축키를 통해 번역을 실행한다 |
-| Pre-condition	| 영역이 지정되어 있어야 함 |
-| Post-condition	| 번역 프로세스 시작 |
+| Description | 단축키를 통해 번역을 실행한다 |
+| Pre-condition | 영역이 지정되어 있어야 함 |
+| Post-condition | 번역 프로세스 시작 |
+
 
 3) Display Result
 
 | 항목	| 내용 |
 |-----|-----|
 | Actor	| System |
-| Description	| 번역 결과를 화면에 오버레이로 출력 |
-| Pre-condition	| 번역 완료 |
-| Post-condition	| 사용자에게 결과 표시 |
+| Description | 번역 결과를 화면에 오버레이로 출력 |
+| Pre-condition | 번역 완료 |
+| Post-condition | 사용자에게 결과 표시 |
 
 ---
 
@@ -95,11 +97,70 @@ graph LR
 
 ### 주요 클래스 정의
 
+| Class | Description |
+|-----|-----|
+| ScreenCapture | 화면의 특정 영역을 캡처하는 클래스 |
+| OCRProcessor | 이미지에서 텍스트를 추출하는 클래스 |
+| Translator | 텍스트를 번역하는 클래스 |
+| OverlayUI | 번역 결과를 화면에 표시하는 클래스 |
+| HotkeyManager | 단축키 입력을 처리하는 클래스 |
+| MainController | 전체 흐름을 제어하는 클래스 |
+
+### 클래스 관계
+MainController는 전체 프로세스를 관리한다
+ScreenCapture는 화면 이미지를 제공한다
+OCRProcessor는 이미지에서 텍스트를 추출한다
+Translator는 텍스트를 번역한다
+OverlayUI는 결과를 출력한다
+HotkeyManager는 사용자 입력을 감지한다
+
 ---
 
 ## 4. User Interface Prototype
 
 ### 기본 UI 구성
+
+```mermaid
+flowchart TB
+
+    subgraph MainWindow["Game Text Translator"]
+    
+        subgraph LeftPanel["Settings Panel"]
+            A1[Source Language]
+            A2[Target Language]
+            A3[Hotkey Settings]
+            A4[Overlay Options]
+        end
+
+        subgraph RightPanel["Preview Area"]
+            B1[Selected Screen Region]
+            B2[Detected Text]
+            B3[Translated Result]
+        end
+
+        subgraph Bottom["Status"]
+            C1[Ready]
+        end
+
+    end
+```
+
+1. 영역 선택 모드
+단축키 입력 시 화면이 반투명하게 변함
+마우스 드래그로 영역 지정
+
+2. 번역 실행
+단축키 입력 시 번역 수행
+
+3.결과 출력
+번역 결과를 화면 위에 오버레이로 표시
+기존 화면을 가리지 않도록 반투명 처리
+
+사용자 흐름
+프로그램 실행
+단축키로 영역 지정
+번역 단축키 입력
+결과 확인
 
 ---
 
